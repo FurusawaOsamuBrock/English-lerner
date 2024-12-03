@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>クイズアプリ</title>
-    <link href='https://fonts.googleapis.com/css?familiy=Raleway:300' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="background"></div> <!--背景用コンテナ追加-->
-    
-
+    <div class="background"></div> <!-- 背景用コンテナ -->
     <div class="quiz-container">
         <h1>英文法概説クイズ</h1>
         <div id="level-selection">
@@ -30,28 +28,15 @@
                 <button onclick="submitAnswer()">送信</button>
             </div>
             <div id="result"></div>
-            <div id="feedback"></div> <!-- 正解・不正解のフィードバックを表示-->
-            <button id="restartButton" style="display: none;" onclick="loadNextQuestion()"></button><!-- 次の問題へ進む-->
+            <div id="feedback"></div>
+            <button id="nextButton" style="display: none;" onclick="nextQuestion()">次の問題へ進む</button>
         </div>
         <div id="final-result" style="display: none;">
             <h2>結果発表</h2>
             <p id="score"></p>
-            <button id="restartButton" style="display: none;">もう一度挑戦する</button>
-
+            <button onclick="location.reload()">もう一度挑戦する</button>
         </div>
     </div>
-    <script src="script.js">
-    chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-        if (message.action === 'someAction') {
-            // 非同期処理を行う
-            someAsyncFunction().then((result) => {
-                sendResponse({ success: true, data: result });
-            }).catch((error) => {
-                sendResponse({ success: false, error: error });
-            });
-            return true; // 非同期応答を示すために true を返す
-        }
-    });
-    </script>    
+    <script src="script.js"></script>
 </body>
 </html>
