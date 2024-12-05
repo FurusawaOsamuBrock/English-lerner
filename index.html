@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クイズアプリ</title>
+    <link href='https://fonts.googleapis.com/css?familiy=Raleway:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background"></div> <!--背景用コンテナ追加-->
+    
+
+    <div class="quiz-container">
+        <h1>英文法概説クイズ</h1>
+        <div id="level-selection">
+            <button onclick="startQuiz('easy')">Easy Mode</button>
+            <button onclick="startQuiz('hard')">Hard Mode</button>
+        </div>
+        
+            <div id="quiz" style="display: none;">
+            <div id="question"></div>
+            <div id="options" class="options" style="display: none;">
+                <button class="option"></button>
+                <button class="option"></button>
+                <button class="option"></button>
+                <button class="option"></button>
+            </div>
+        </div>    
+            <div id="input-answer" style="display: none;">
+                <input type="text" id="user-answer" placeholder="答えを入力">
+                <button onclick="submitAnswer()">送信</button>
+            </div>
+            <div id="result"></div>
+            <div id="feedback"></div> <!-- 正解・不正解のフィードバックを表示-->
+            <button id="restartButton" style="display: none;" onclick="loadNextQuestion()"></button><!-- 次の問題へ進む-->
+        </div>
+        <div id="final-result" style="display: none;">
+            <h2>結果発表</h2>
+            <p id="score"></p>
+            <button id="restartButton" style="display: none;" onclick="restartQuiz()">もう一度挑戦する</button>
+
+        </div>
+    </div>
+    <script src="script.js" > </script>    
+</body>
+</html>
+
+    
+    
